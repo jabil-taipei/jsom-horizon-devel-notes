@@ -1,5 +1,7 @@
 # Jabil JSOM Horizon Developing Notes
 
++ [Introduction to WiFi Device Test](inc/wifi-device-test.pdf)
+
 --------------------------------------------------------------------------------
 # CLI Test Commands
 
