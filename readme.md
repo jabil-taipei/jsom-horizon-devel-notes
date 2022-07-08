@@ -7,7 +7,7 @@
 
 ```bash
 # start CLI test process
-$ techvision_cli
+$ jabil_cli
 
 # set log level: 0-3
 $ log $level
@@ -49,6 +49,11 @@ $ help
     + TVURTA: auto tx/rx test; use TVSTOP to stop test
     + TVURTR: read data from the specified port
     + TVURTW: write data to the specified port
+    + notes
+        + mapping of available ttyS to J9500 DuPont housing
+            + ttyS0=UART1
+            + ttyS7=UART7
+            + ttyS8=UART3
 + RTC Test
     + TVRTCR: read RTC
         + example output: 2020-1-7, 10:22:27.
@@ -91,9 +96,17 @@ $ help
     + TVADCR: read raw data
         + e.g. TVADCR -c 3
         + e.g. TVADCR
+    + notes
+        + mapping of available ADC channels to J9500 DuPont housing
+            + channel 2=ADC1
+            + channel 3=ADC2
 + Button Test
     + TVKEYR: read key press
         + TVSTOP to exit
+    + notes
+        + mapping of available buttons to key values
+            + AD_KEY3(SW3)=115
+            + AD_KEY4(SW4)=114
 + SD Card Test
     + parameters
         + -t [timeout(sec)]: 10 sec by default
@@ -115,6 +128,12 @@ $ help
     + TVCANI: initialize test
     + TVCANR: read test
     + TVCANW: write test
+    + notes
+        + Core Dual supports CAN communication
+        + Core Single does not support CAN communication
+        + connects CANH, CANL, CAN_VSS of one dev board to the other
+
+![J9500_DuPont_housing](inc/J9500_DuPont_housing.png)
 
 --------------------------------------------------------------------------------
 # Manual Test Commands
